@@ -6,7 +6,7 @@ const Chatbox = () => {
   const messageList = [
     {
       text: "Hi, I'm Brightness, Diseyi's Bot",
-          id: 1,
+      id: 1,
     },
     {
       text: "I’m just like Seán, but a far better conversationalist 😉",
@@ -21,6 +21,7 @@ const Chatbox = () => {
       id: 4,
     },
   ];
+
 
   const displayQuestion = (question: any) => {
     question.map((message: any) => {

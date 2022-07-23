@@ -1,7 +1,11 @@
 import { CloseOutlined } from "@ant-design/icons";
 import React from "react";
 
-const Header = () => {
+interface Props {
+  handleClick?: any;
+}
+
+const Header = (props: Props) => {
   return (
     <div className=" py-4 flex justify-between z-10 items-center bg-[#05445E] sticky px-6 top-0 w-full">
       <div className="flex space-x-3 ">
@@ -19,7 +23,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="" onClick={props.handleClick} >
         <CloseOutlined style={{ color: "white " }} />
       </div>
     </div>
