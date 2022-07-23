@@ -1,15 +1,19 @@
+import MessageOutlined from "@ant-design/icons/lib/icons/MessageOutlined";
 import "./App.css";
 import Chatbox from "./component/chatbox";
 import Header from "./component/header";
-import Blog from "./component/Test";
 
 function App() {
   return (
     <div className=" ">
-      <div className="relative w-96 h-[500px] overflow-scroll rounded border bg-[#D4F1F4] border-[#189AB4] mt-10 mx-auto">
+      <div className="">
+      <MessageOutlined />
+      </div>
+      <div className="relative w-96 h-[500px]  rounded border overflow-none bg-[#D4F1F4] border-[#189AB4] mt-10 mx-auto">
         <Header />
-        <Chatbox />
-        {/* <Blog /> */}
+        <div className="w-full h-[410px] overflow-y-scroll scroll-style ">
+          <Chatbox />
+        </div>
       </div>
     </div>
   );

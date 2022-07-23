@@ -57,7 +57,7 @@ const Chatbox = () => {
   };
 
   return (
-    <div className="px-3 border overflow-scroll  ">
+    <div className="px-3 border   ">
       {messageList.map((message) => {
         return (
           <Chat
