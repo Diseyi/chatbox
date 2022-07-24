@@ -11,7 +11,7 @@ import {
 } from "../../utilities/data";
 
 const Chatbox = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLInputElement>(null);
 
   const displayQuestion = (questions: any) => {
     questions.map((message: any) => {
