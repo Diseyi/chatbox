@@ -1,5 +1,5 @@
 # chatbot 
-A customizable chatbot for answering FAQ questions made with react and typescript
+A customizable chatbot made with react and typescript
 
 # Install
 to install dependencies
