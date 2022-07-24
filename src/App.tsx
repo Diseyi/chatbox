@@ -13,10 +13,11 @@ function App() {
 
   return (
     <div className=" ">
+      <div className="text-center text-3xl font-bold py-4 capitalize">click on the chat icon</div>
       <div className="fixed bottom-10 right-0 md:right-4">
         {!showChatbox && (
           <div
-            className="w-16 h-16 rounded-full bg-[#05445E] flex items-center justify-center"
+            className="w-16 h-16 rounded-full bg-[#05445E] mx-2 my-2 flex items-center justify-center"
             onClick={handleClick}
           >
             <MessageOutlined style={{ fontSize: "32px", color: "white" }} />
