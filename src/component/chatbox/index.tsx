@@ -124,7 +124,7 @@ const Chatbox = () => {
   };
 
   return (
-    <div className="px-3 border ">
+    <div className="px-3 ">
       <div className="my-2">
         {welcomeMessage.map((message) => {
           return (
