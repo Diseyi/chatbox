@@ -8,3 +8,6 @@ yarn
 to run the app
 yarn dev
 
+# inspiration
+https://www.seanhalpin.design
+
