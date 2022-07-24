@@ -20,7 +20,7 @@ const Chatbox = () => {
 
       div.className = "flex hide flex-wrap gap-2 ";
       button.className =
-        "py-2 px-4 border text-sm rounded-full bg-[#ffafcc] text-[#05445E]";
+        "py-2 px-4 border text-sm rounded-full bg-[#B1B1B1] hover:bg-[#747474] text-black";
       button.addEventListener("click", handleClick);
 
       button.innerText = message.text;
@@ -35,7 +35,7 @@ const Chatbox = () => {
       const button = document.createElement("div");
       div.className = "flex ";
       button.className =
-        "border bg-[#189AB4] text-[#D4F1F4] inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1";
+        "border border-[#0A0708]  text-black inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1";
 
       button.innerText = message.text;
       div.appendChild(button);
@@ -48,7 +48,7 @@ const Chatbox = () => {
     const button = document.createElement("div");
     div.className = "flex justify-end";
     button.className =
-      "border text-[#05445E] border-[#189AB4] inline-flex p-3 text-sm rounded-tl-lg rounded-br-lg rounded-bl-lg text-end my-2";
+      " text-white bg-[#444444] inline-flex p-3 text-sm rounded-tl-lg rounded-br-lg rounded-bl-lg text-end my-2";
 
     button.innerText = reply;
     div.appendChild(button);
@@ -130,7 +130,7 @@ const Chatbox = () => {
           return (
             <div
               key={message.id}
-              className="border bg-[#189AB4] text-[#D4F1F4] inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1"
+              className="border border-[#0A0708]  text-black inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1"
             >
               {message.text}{" "}
             </div>
@@ -143,7 +143,7 @@ const Chatbox = () => {
           return (
             <button
               key={botQuestions.id}
-              className="py-2 px-4 border text-sm rounded-full bg-[#ffafcc] text-[#05445E] "
+              className="py-2 px-4 border text-sm rounded-full bg-[#B1B1B1] hover:bg-[#747474] text-black "
               onClick={handleClick}
             >
               {botQuestions.text}{" "}
