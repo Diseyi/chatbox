@@ -5,11 +5,10 @@ import Chatbox from "./component/chatbox";
 import Header from "./component/header";
 
 function App() {
-  const [showChatbox, setShowChatbox] = useState(true);
+  const [showChatbox, setShowChatbox] = useState(false);
 
   const handleClick = () => {
     setShowChatbox(true);
-    console.log("clicked");
   };
 
   return (
