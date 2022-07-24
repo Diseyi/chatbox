@@ -25,7 +25,7 @@ const Chatbox = () => {
 
       button.innerText = message.text;
       div.appendChild(button);
-      containerRef.current.appendChild(div);
+      containerRef.current?.appendChild(div);
     });
   };
 
@@ -39,7 +39,7 @@ const Chatbox = () => {
 
       button.innerText = message.text;
       div.appendChild(button);
-      containerRef.current.appendChild(div);
+      containerRef.current?.appendChild(div);
     });
   };
 
@@ -52,7 +52,7 @@ const Chatbox = () => {
 
     button.innerText = reply;
     div.appendChild(button);
-    containerRef.current.appendChild(div);
+    containerRef.current?.appendChild(div);
   };
 
   const sendMessage = () => {
@@ -68,7 +68,7 @@ const Chatbox = () => {
     anchor.innerText = "Send me a message";
 
     div.appendChild(anchor);
-    containerRef.current.appendChild(div);
+    containerRef.current?.appendChild(div);
   };
 
   const handleClick = (event: any) => {
