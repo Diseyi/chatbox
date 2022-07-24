@@ -9,7 +9,7 @@ const Chatbox = () => {
       id: 1,
     },
     {
-      text: "I’m just like Seán, but a far better conversationalist 😉",
+      text: "I’m just like Diseyi, but a far better conversationalist 😉",
       id: 2,
     },
     {
@@ -22,6 +22,48 @@ const Chatbox = () => {
     },
   ];
 
+  const bot = [
+    {
+      id: 5,
+      question: "I just wanted to say hello",
+      answers: [
+        "Well hello there!",
+        "Well hello there!",
+        "I hope you've enjoyed browsing my work",
+        "Can I help you with anything else?",
+      ],
+    },
+    {
+      id: 6,
+      question: "Interested in mentorship",
+      answers: [
+        "Hi!",
+        "Thanks for reaching out",
+        "Unfortunately, I don't currently have any capacity to take on the role of mentor for any new students this year",
+        "Thanks for understanding",
+        "Can I help you with anything else?",
+      ],
+    },
+    {
+      id: 7,
+      question: "how can I collaborate with you?",
+      answers: [
+        "Ok, great",
+        "Exciting times 🕺",
+        "Send me a message and lets chat further!",
+      ],
+    },
+    {
+      id: 8,
+      question: "I'd like to hire you!",
+      answers: [
+        "Ok, great",
+        "Exciting times 🕺",
+        "Send me a message and lets chat further!",
+      ],
+      connect: ["Send a message", "Other options?"],
+    },
+  ];
 
   const displayQuestion = (question: any) => {
     question.map((message: any) => {
@@ -47,14 +89,19 @@ const Chatbox = () => {
   };
 
   const handleClick = (event: any) => {
+
     const reply = event.target.innerText;
-    const filterQuestion = messageList.filter(
-      (message) => message.text !== reply
+
+    const filterQuestion = bot.filter(
+      (message) => message.question !== reply
     );
+
     displayReply(reply);
-    setTimeout(() => {
-      displayQuestion(filterQuestion);
-    }, 1000);
+    // setTimeout(() => {
+    //   displayQuestion(filterQuestion);
+    // }, 1000);
+    console.log(filterQuestion)
+
   };
 
   return (
@@ -64,10 +111,19 @@ const Chatbox = () => {
           <Chat
             text={message.text}
             key={message.id}
-            handleClick={handleClick}
           />
         );
       })}
+
+      <div className="flex flex-wrap gap-2">
+        {bot.map((bot) => {
+          return (
+            <button key="bot.id" className="py-3 px-4 border rounded-full bg-[#ffafcc] text-[#05445E] font-semibold  " onClick={handleClick} >
+              {bot.question}{" "}
+            </button>
+          );
+        })}
+      </div>
 
       <div ref={containerRef}></div>
     </div>
