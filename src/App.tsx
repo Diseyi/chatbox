@@ -25,7 +25,7 @@ function App() {
         )}
 
         {showChatbox && (
-          <div className="relative m-4 md:w-96 h-[600px]  rounded shadow-lg overflow-none bg-[#ffffff] border-[#189AB4]">
+          <div className="relative m-4 md:w-96 h-[600px] rounded shadow-lg overflow-none bg-[#ffffff] border-[#189AB4]">
             <Header handleClick={ () => setShowChatbox(false) } />
             <div className="w-full h-[510px] overflow-y-auto">
               <Chatbox />

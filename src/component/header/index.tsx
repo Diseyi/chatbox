@@ -7,7 +7,7 @@ interface Props {
 
 const Header = (props: Props) => {
   return (
-    <div className=" py-5 flex justify-between z-10 items-center bg-[#05445E] sticky px-6 top-0 w-full">
+    <div className=" py-5 flex justify-between z-10 rounded items-center bg-[#05445E] sticky px-6 top-0 w-full">
       <div className="flex space-x-3 ">
         <div className="border w-12 bg-[#189AB4] h-12 rounded-full ">
           <img

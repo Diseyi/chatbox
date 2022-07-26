@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   replyHello,
   replyOtherOption,
@@ -12,6 +12,7 @@ import {
 
 const Chatbox = () => {
   const containerRef = useRef<HTMLInputElement>(null);
+  const [sendMessage, setSendMessage] = useState(false);
 
   const displayQuestion = (questions: any) => {
     questions.map((message: any) => {
@@ -55,21 +56,21 @@ const Chatbox = () => {
     containerRef.current?.appendChild(div);
   };
 
-  const sendMessage = () => {
-    const div = document.createElement("div");
-    const anchor = document.createElement("a");
+  // const sendMessage = () => {
+  //   const div = document.createElement("div");
+  //   const anchor = document.createElement("a");
 
-    anchor.href = "mailto:filomiinaa@gmail.com";
+  //   anchor.href = "mailto:filomiinaa@gmail.com";
 
-    div.className = "w-full ";
-    anchor.className =
-      "w-full block mt-4 tetx-sm text-center border bg-[#189AB4] text-[#D4F1F4] cursor-pointer  p-4 text-sm rounded";
+  //   div.className = "w-full ";
+  //   anchor.className =
+  //     "w-full block mt-4 tetx-sm text-center border bg-[#189AB4] text-[#D4F1F4] cursor-pointer  p-4 text-sm rounded";
 
-    anchor.innerText = "Send me a message";
+  //   anchor.innerText = "Send me a message";
 
-    div.appendChild(anchor);
-    containerRef.current?.appendChild(div);
-  };
+  //   div.appendChild(anchor);
+  //   containerRef.current?.appendChild(div);
+  // };
 
   const handleClick = (event: any) => {
     const reply = event.target.innerText;
@@ -119,41 +120,86 @@ const Chatbox = () => {
       }, 1000);
     }
     if (reply === "Send a message") {
-      sendMessage();
+    setSendMessage(true);
     }
   };
 
   return (
     <div className="px-3 ">
-      <div className="my-2">
-        {welcomeMessage.map((message) => {
-          return (
-            <div
-              key={message.id}
-              className="border border-[#0A0708]  text-black inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1"
-            >
-              {message.text}{" "}
-            </div>
-          );
-        })}
-      </div>
+      {!sendMessage ? (
+        <div>
+          <div className="my-2">
+            {welcomeMessage.map((message) => {
+              return (
+                <div
+                  key={message.id}
+                  className="border border-[#0A0708]  text-black inline-flex p-3 text-sm rounded-tr-lg rounded-br-lg rounded-bl-lg text-start my-1"
+                >
+                  {message.text}{" "}
+                </div>
+              );
+            })}
+          </div>
 
-      <div className="flex flex-wrap gap-1">
-        {botQuestions.map((botQuestions) => {
-          return (
-            <button
-              key={botQuestions.id}
-              className="py-2 px-4 border text-sm rounded-full bg-[#B1B1B1] hover:bg-[#747474] text-black "
-              onClick={handleClick}
-            >
-              {botQuestions.text}{" "}
-            </button>
-          );
-        })}
-      </div>
+          <div className="flex flex-wrap gap-1">
+            {botQuestions.map((botQuestions) => {
+              return (
+                <button
+                  key={botQuestions.id}
+                  className="py-2 px-4 border text-sm rounded-full bg-[#B1B1B1] hover:bg-[#747474] text-black "
+                  onClick={handleClick}
+                >
+                  {botQuestions.text}{" "}
+                </button>
+              );
+            })}
+          </div>
 
-      <div ref={containerRef}></div>
-      <div></div>
+          <div ref={containerRef}></div>
+        </div>
+      ) : (
+        <form className="mt-4">
+          <h2 className="text-base text-center my-2">
+            I'll get back to you shortly
+          </h2>
+          <label htmlFor="name" className="block text-sm py-1">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="block w-full p-2 border mb-2"
+          />
+          <label htmlFor="email" className="block text-sm py-1">
+            Subject
+          </label>
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            className="block w-full p-2 border mb-2"
+            placeholder=""
+          />
+          <label htmlFor="email" className="block text-sm py-1">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className="block w-full p-2 border mb-2"
+          />
+          <label htmlFor="message" className="block text-sm py-1">
+            How can I help you?{" "}
+          </label>
+          <textarea name="" id="" rows="5" className="border w-full"></textarea>
+          <button className="w-full block mt-4 tetx-sm text-center border bg-[#189AB4] text-[#D4F1F4] cursor-pointer  p-4 text-sm rounded">
+            {" "}
+            Send
+          </button>
+        </form>
+      )}
     </div>
   );
 };
