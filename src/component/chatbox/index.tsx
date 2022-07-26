@@ -193,7 +193,7 @@ const Chatbox = () => {
           <label htmlFor="message" className="block text-sm py-1">
             How can I help you?{" "}
           </label>
-          <textarea name="" id="" rows="5" className="border w-full"></textarea>
+          <textarea name="" id="" rows={5} className="border w-full"></textarea>
           <button className="w-full block mt-4 tetx-sm text-center border bg-[#189AB4] text-[#D4F1F4] cursor-pointer  p-4 text-sm rounded">
             {" "}
             Send
